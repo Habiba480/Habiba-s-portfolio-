@@ -1,23 +1,16 @@
 window.PORTFOLIO = {
   profile: {
     name: "Habiba Ahmed Hassan",
-    title: "AI Engineer — conversational systems, agents, and workflow automation",
+    title: "AI Engineer",
     summary:
-      "I build and ship production AI systems: real-time voice interfaces, retrieval-based assistants, and automated operations. Close to three years across product work (Appgain.io) and freelance engagements—LLM integration, NLP and speech pipelines, APIs, and deployment.",
+      "AI Engineer with almost 3 years of professional experience designing, building, and deploying production-ready AI systems, specializing in agentic AI, conversational agents, and workflow automation. Proven track record of delivering end-to-end solutions, including real-time voice agents, RAG-based chatbots, and automated operational workflows. Skilled in orchestrating LLMs, building NLP pipelines, integrating with APIs, and deploying scalable AI systems in both company and freelance environments. Strong focus on practical AI engineering, system integration, and delivering impactful AI products using cutting-edge frameworks and technologies.",
     location: "Egypt",
     email: "habibahassan4800@gmail.com",
     phoneDisplay: "+20 10 6565 8735",
     phoneTel: "+201065658735",
     links: [
-      {
-        kind: "email",
-        label: "habibahassan4800@gmail.com",
-      },
-      {
-        kind: "phone",
-        label: "+20 10 6565 8735",
-        href: "tel:+201065658735",
-      },
+      { kind: "email", label: "habibahassan4800@gmail.com" },
+      { kind: "phone", label: "+20 10 6565 8735", href: "tel:+201065658735" },
       {
         kind: "url",
         label: "LinkedIn",
@@ -32,23 +25,21 @@ window.PORTFOLIO = {
       role: "AI Engineer",
       period: "Jun 2025 — Present",
       summary:
-        "Production AI for conversational interfaces and voice.",
+        "Designing and deploying production-ready AI systems focused on conversational AI and voice interfaces.",
       initiatives: [
         {
           title: "Real-Time Arabic AI Voice Agent",
           bullets: [
-            "Arabic voice agent: streaming audio, speech recognition, LLM reasoning with memory, and TTS.",
-            "Multiple concurrent realtime sessions.",
+            "Production-ready voice agent for understanding and responding in Arabic: full pipeline for streaming audio, speech recognition, LLM reasoning, conversational memory, and TTS synthesis. Multiple concurrent users in real time.",
           ],
-          stack: "ElevenLabs, LangGraph, LLM APIs, Python, WebSockets, FastAPI",
+          stack: "11labs, LangGraph, LLM APIs, Python, WebSockets, FastAPI",
         },
         {
           title: "AI Meeting Summarizer",
           bullets: [
-            "Transcription and structured summaries for recurring meetings.",
-            "100+ meetings per month summarized; roughly 70% less manual note-taking.",
+            "End-to-end meeting intelligence: transcribes meetings and generates structured summaries. 100+ meetings per month automatically, reducing manual note-taking by 70%.",
           ],
-          stack: "Whisper, Meta LLaMA, Streamlit, Python",
+          stack: "Whisper, Meta-LLaMA, Streamlit, Python",
         },
       ],
     },
@@ -57,61 +48,54 @@ window.PORTFOLIO = {
       role: "AI Engineer",
       period: "May 2024 — Present",
       summary:
-        "Automation workflows, chatbots, and agent-style systems for small businesses and online retail.",
+        "Building AI-powered automation workflows, conversational assistants, and agentic systems for small businesses and online stores.",
       initiatives: [
         {
-          title: "Automated Order Management Workflow",
+          title: "Automated Order Management Workflow (n8n)",
           bullets: [
-            "Restaurant orders via messaging platforms and APIs.",
-            "500+ orders weekly; processing time down about 80%.",
+            "AI workflow to process and manage restaurant customer orders via messaging platforms and APIs. 500+ orders weekly automatically, reducing processing time by 80%.",
           ],
           stack: "n8n, REST APIs, Webhooks",
         },
         {
-          title: "WhatsApp E-commerce Chatbot",
+          title: "WhatsApp E-commerce Chatbot (n8n)",
           bullets: [
-            "Shoe store: inquiries and order flow on WhatsApp.",
-            "300+ interactions monthly; high order-fulfillment accuracy.",
+            "WhatsApp chatbot for a shoe store: customer inquiries and order management. 300+ interactions per month with 95% accuracy in order fulfillment.",
           ],
           stack: "n8n, Python, LLM APIs, WhatsApp API",
         },
         {
-          title: "Retail AI Assistant (Cosmetics)",
+          title: "Retail AI Assistant for Cosmetics Store (RAG, n8n)",
           bullets: [
-            "RAG assistant for products, recommendations, and orders.",
-            "Semantic search over store content; engagement up about 60%.",
+            "RAG-based assistant for product queries, recommendations, and order placement. Semantic search for context-aware responses; engagement improved by 60%.",
           ],
           stack: "LangChain, RAG, Sentence Transformers, n8n, Python",
         },
         {
-          title: "AI Email Automation Agent",
+          title: "AI Email Automation Agent (n8n)",
           bullets: [
-            "Routing, LLM replies, and downstream workflows.",
-            "About 50% less manual email handling.",
+            "Automated email processing: categorizes requests, generates replies via LLMs, triggers internal workflows. Reduced manual email handling by 50%.",
           ],
           stack: "n8n, LLM APIs, Email APIs, Webhooks",
         },
         {
-          title: "AI Customer Support Automation Agent",
+          title: "AI Customer Support Automation Agent (n8n)",
           bullets: [
-            "Inbound messages, LLM responses, escalation rules.",
-            "~200 requests per week; strong first-response accuracy.",
+            "Processes customer messages, LLM-based responses, escalation when needed. 200 requests per week with 85% first-response accuracy.",
           ],
           stack: "n8n, LLM APIs, Webhooks, REST APIs",
         },
         {
           title: "AI Social Media Engagement Agent",
           bullets: [
-            "Content generation, scheduling, and comment replies.",
-            "Engagement up about 40%; posting workload down about 70%.",
+            "Generate, schedule, and post content; respond to comments with LLM-generated replies. Engagement increased by 40%; manual posting time reduced by 70%.",
           ],
           stack: "n8n, LLM APIs, REST APIs, Social Media APIs",
         },
         {
           title: "AI Sales & Order Follow-Up Agent",
           bullets: [
-            "Reminders for pending orders and follow-up messages.",
-            "On-time payments up about 35%.",
+            "Follow-up on pending orders, personalized reminders, inquiries. On-time payment collection increased by 35%.",
           ],
           stack: "n8n, LLM APIs, WhatsApp API, REST APIs",
         },
@@ -121,111 +105,69 @@ window.PORTFOLIO = {
 
   expertise: [
     {
-      label: "Languages",
+      label: "Programming",
       items: ["Python (primary)", "C++", "Java", "JavaScript"],
     },
     {
-      label: "ML & classical stack",
+      label: "AI / Machine Learning",
       items: [
         "PyTorch",
         "TensorFlow",
         "Keras",
         "Scikit-learn",
         "Hugging Face Transformers",
-        "Reinforcement learning",
+        "Reinforcement Learning",
       ],
     },
     {
       label: "Generative AI & LLMs",
       items: [
-        "Meta LLaMA",
+        "Meta-LLaMA",
         "GPT-4o",
         "GPT-NeoX",
         "T5",
         "Whisper",
         "Fine-tuning",
-        "Prompt design",
-        "Agent-style orchestration",
+        "Prompt Engineering",
+        "Agentic AI",
       ],
     },
     {
-      label: "NLP & retrieval",
+      label: "NLP & RAG",
       items: [
         "LangChain",
         "LangGraph",
-        "Retrieval-augmented generation",
+        "Retrieval Augmented Generation (RAG)",
         "spaCy",
         "Sentence Transformers",
       ],
     },
     {
-      label: "Speech & realtime",
-      items: ["Whisper", "STT / TTS", "Audio pipelines", "WebSockets"],
+      label: "Speech AI",
+      items: ["Whisper", "STT", "TTS", "Audio Pipelines"],
     },
     {
-      label: "Automation & backend",
+      label: "Automation & Workflow Orchestration",
+      items: ["n8n", "Airflow", "REST APIs", "Webhooks"],
+    },
+    {
+      label: "Backend & Deployment",
       items: [
-        "n8n",
-        "Airflow",
-        "REST & Webhooks",
         "FastAPI",
         "Flask",
         "Streamlit",
         "Docker",
-        "Cloud deployment",
+        "Containerization",
+        "Cloud Deployment",
       ],
     },
     {
-      label: "Data & tooling",
-      items: ["FAISS", "Pinecone", "Qdrant", "Git", "Redis", "Selenium", "Bash"],
-    },
-  ],
-
-  projects: [
-    {
-      title: "Real-Time Arabic AI Voice Agent",
-      role: "Appgain.io",
-      summary:
-        "Arabic voice pipeline: streaming audio, ASR, LLM with memory, TTS; concurrent sessions.",
-      highlights: [
-        "ElevenLabs, LangGraph, LLM APIs behind WebSockets and FastAPI.",
-        "Tuned for concurrency and low-latency turns.",
-      ],
-      stack: ["FastAPI", "WebSockets", "LangGraph", "Python", "ElevenLabs", "LLM APIs"],
-      links: [],
+      label: "Vector Databases",
+      items: ["FAISS", "Pinecone", "Qdrant"],
     },
     {
-      title: "AI Meeting Summarizer",
-      role: "Appgain.io",
-      summary:
-        "Transcription plus structured summaries for standing meetings.",
-      highlights: [
-        "100+ meetings summarized per month; large reduction in manual notes.",
-      ],
-      stack: ["Whisper", "Meta LLaMA", "Streamlit", "Python"],
-      links: [],
-    },
-    {
-      title: "Retail AI Assistant (RAG)",
-      role: "Freelance — cosmetics",
-      summary:
-        "Product Q&A, recommendations, and orders using retrieval over store knowledge.",
-      highlights: [
-        "LangChain, Sentence Transformers, and n8n; strong engagement lift.",
-      ],
-      stack: ["LangChain", "RAG", "Sentence Transformers", "n8n", "Python"],
-      links: [],
-    },
-    {
-      title: "Operations automation (n8n)",
-      role: "Freelance",
-      summary:
-        "Production workflows: orders, WhatsApp commerce, email, support, social, and sales follow-up.",
-      highlights: [
-        "High weekly volume: orders, WhatsApp traffic, and support queues with monitored accuracy.",
-      ],
-      stack: ["n8n", "LLM APIs", "REST", "Webhooks", "WhatsApp API"],
-      links: [],
+      label: "Tools",
+      items: ["Git", "GitHub", "Redis", "Selenium", "Bash"],
     },
   ],
 
@@ -235,12 +177,12 @@ window.PORTFOLIO = {
       school: "Luxor University — Faculty of Computers and Information Technology",
       period: "Jun 2025",
       detail:
-        "Grade: A+ (Excellent). Senior project: predictive system for chronic disease detection.",
+        "Grade: A+ (Excellent). Senior Project: Predictive System for Chronic Diseases Detection.",
     },
   ],
 
   certifications: [
-    "Machine Learning Specialization — Coursera (Andrew Ng), 2024",
-    "Microsoft Certified: Azure AI Engineer Associate (expected 2026)",
+    "Machine Learning Specialization – Coursera (Andrew Ng), 2024",
+    "Microsoft Certified: Azure AI Engineer Associate (Expected 2026)",
   ],
 };

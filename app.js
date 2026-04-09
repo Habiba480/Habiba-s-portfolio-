@@ -164,7 +164,7 @@
     });
   }
 
-  /* Expertise — single compact block */
+  /* Expertise */
   var grid = document.getElementById("expertise-grid");
   var expertise = data.expertise || [];
   if (grid && expertise.length) {
@@ -184,79 +184,6 @@
       compact.appendChild(row);
     });
     grid.appendChild(compact);
-  }
-
-  /* Projects */
-  var list = document.getElementById("project-list");
-  var projects = data.projects || [];
-  if (list && projects.length) {
-    projects.forEach(function (proj) {
-      var li = document.createElement("li");
-      li.className = "project-card";
-
-      var title = document.createElement("h3");
-      title.textContent = proj.title;
-      li.appendChild(title);
-
-      if (proj.role) {
-        var meta = document.createElement("p");
-        meta.className = "project-meta";
-        meta.textContent = proj.role;
-        li.appendChild(meta);
-      }
-
-      if (proj.summary) {
-        var desc = document.createElement("p");
-        desc.className = "project-desc";
-        desc.textContent = proj.summary;
-        li.appendChild(desc);
-      }
-
-      var ph = proj.highlights;
-      if (ph && ph.length) {
-        var ulh = document.createElement("ul");
-        ulh.className = "project-highlights";
-        ph.forEach(function (line) {
-          var hi = document.createElement("li");
-          hi.textContent = line;
-          ulh.appendChild(hi);
-        });
-        li.appendChild(ulh);
-      }
-
-      if (proj.stack && proj.stack.length) {
-        var badges = document.createElement("div");
-        badges.className = "badge-row";
-        proj.stack.forEach(function (tag) {
-          var b = document.createElement("span");
-          b.className = "badge";
-          b.textContent = tag;
-          badges.appendChild(b);
-        });
-        li.appendChild(badges);
-      }
-
-      var links = (proj.links || []).filter(function (l) {
-        return l && l.href && String(l.href).trim() !== "";
-      });
-      if (links.length) {
-        var ulp = document.createElement("ul");
-        ulp.className = "project-links";
-        links.forEach(function (l) {
-          var item = document.createElement("li");
-          var a = document.createElement("a");
-          a.href = l.href;
-          a.textContent = l.label || l.href;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-          item.appendChild(a);
-          ulp.appendChild(item);
-        });
-        li.appendChild(ulp);
-      }
-
-      list.appendChild(li);
-    });
   }
 
   /* Education */
