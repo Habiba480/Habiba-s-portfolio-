@@ -82,7 +82,7 @@
   if (expList && experiences.length) {
     experiences.forEach(function (e) {
       var li = document.createElement("li");
-      li.className = "exp-card";
+      li.className = "exp-card reveal-on-scroll";
 
       var top = document.createElement("div");
       top.className = "exp-top";
@@ -188,7 +188,7 @@
   var expertise = data.expertise || [];
   if (grid && expertise.length) {
     var compact = document.createElement("div");
-    compact.className = "expertise-compact";
+    compact.className = "expertise-compact reveal-on-scroll";
     expertise.forEach(function (block) {
       var row = document.createElement("div");
       row.className = "exp-row";
@@ -211,7 +211,7 @@
   if (eduList && education.length) {
     education.forEach(function (ed) {
       var article = document.createElement("article");
-      article.className = "edu-card";
+      article.className = "edu-card reveal-on-scroll";
 
       var row = document.createElement("div");
       row.className = "edu-top";
@@ -257,4 +257,37 @@
     });
     certWrap.appendChild(ulc);
   }
+
+  function initMotion() {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var nodes = document.querySelectorAll(".reveal-on-scroll");
+    if (reduce) {
+      nodes.forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+      return;
+    }
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+      return;
+    }
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06, rootMargin: "0px 0px -28px 0px" }
+    );
+    nodes.forEach(function (el) {
+      io.observe(el);
+    });
+  }
+
+  initMotion();
 })();

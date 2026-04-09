@@ -14,7 +14,11 @@
 <body>
   <a class="skip" href="#experience">Skip to content</a>
 
-  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-ambient" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
 
   <header class="top">
     <div class="wrap top-inner">
@@ -23,19 +27,26 @@
         <a href="#experience">Experience</a>
         <a href="#expertise">Expertise</a>
         <a href="#education">Education</a>
+        <a class="btn-cv btn-cv--nav" href="Habiba_Ahmed_Hassan_AI.pdf" download="Habiba_Ahmed_Hassan_AI.pdf">Download CV</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
 
   <section class="hero" id="top">
-    <div class="wrap hero-inner">
+    <div class="wrap hero-inner hero-inner--animate">
       <p class="eyebrow">Engineering · voice · automation</p>
       <h1 class="hero-name" id="profile-name"></h1>
       <p class="hero-title" id="profile-title"></p>
       <p class="hero-summary" id="profile-summary"></p>
       <div class="hero-meta">
         <span class="hero-location" id="profile-location" hidden></span>
+        <p class="hero-actions">
+          <a class="btn-cv btn-cv--hero" href="Habiba_Ahmed_Hassan_AI.pdf" download="Habiba_Ahmed_Hassan_AI.pdf">
+            <span class="btn-cv__icon" aria-hidden="true">↓</span>
+            Download CV
+          </a>
+        </p>
         <ul class="hero-links" id="profile-links"></ul>
         <noscript>
           <p class="hero-noscript">
@@ -83,7 +94,7 @@
         <h3 class="subhead">Education</h3>
         <div class="education-block" id="education-list"></div>
         <h3 class="subhead subhead-cert">Certifications</h3>
-        <div class="cert-block" id="certifications-list"></div>
+        <div class="cert-block reveal-on-scroll" id="certifications-list"></div>
       </div>
     </section>
   </main>
