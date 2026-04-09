@@ -23,25 +23,51 @@
     loc.textContent = p.location;
   }
 
+  function mailtoHref(email) {
+    var e = email || p.email || "";
+    if (!e) return "#";
+    return "mailto:" + e + "?subject=" + encodeURIComponent("Hello Habiba");
+  }
+
   function renderLinks(containerId, links) {
     var ul = document.getElementById(containerId);
     if (!ul || !links) return;
-    var visible = links.filter(function (l) {
-      return l && l.href && String(l.href).trim() !== "";
-    });
-    visible.forEach(function (l) {
+
+    links.forEach(function (l) {
+      if (!l) return;
       var li = document.createElement("li");
       var a = document.createElement("a");
-      a.href = l.href;
-      a.textContent = l.label || l.href;
-      var h = String(l.href);
-      if (h.indexOf("mailto:") === 0 || h.indexOf("tel:") === 0) {
-        a.removeAttribute("target");
-        a.removeAttribute("rel");
-      } else {
+      var href = "";
+      var kind = l.kind || "";
+
+      if (kind === "email") {
+        href = mailtoHref(p.email);
+        a.textContent = l.label || p.email || "Email";
+        a.setAttribute("href", href);
+        a.setAttribute(
+          "aria-label",
+          "Send email to " + (p.email || "Habiba Ahmed Hassan")
+        );
+      } else if (kind === "phone" && l.href) {
+        href = l.href;
+        a.textContent = l.label || l.href;
+        a.setAttribute("href", href);
+        a.setAttribute("aria-label", "Call " + (l.label || ""));
+      } else if (l.href) {
+        href = l.href;
+        a.textContent = l.label || l.href;
+        a.setAttribute("href", href);
         a.target = "_blank";
         a.rel = "noopener noreferrer";
+      } else {
+        return;
       }
+
+      if (href.indexOf("mailto:") === 0 || href.indexOf("tel:") === 0) {
+        a.removeAttribute("target");
+        a.removeAttribute("rel");
+      }
+
       li.appendChild(a);
       ul.appendChild(li);
     });
@@ -138,25 +164,26 @@
     });
   }
 
-  /* Expertise */
+  /* Expertise — single compact block */
   var grid = document.getElementById("expertise-grid");
   var expertise = data.expertise || [];
   if (grid && expertise.length) {
+    var compact = document.createElement("div");
+    compact.className = "expertise-compact";
     expertise.forEach(function (block) {
-      var col = document.createElement("div");
-      col.className = "exp-col";
-      var h = document.createElement("h3");
-      h.textContent = block.label || "";
-      col.appendChild(h);
-      var ul = document.createElement("ul");
-      (block.items || []).forEach(function (item) {
-        var li = document.createElement("li");
-        li.textContent = item;
-        ul.appendChild(li);
-      });
-      col.appendChild(ul);
-      grid.appendChild(col);
+      var row = document.createElement("div");
+      row.className = "exp-row";
+      var strong = document.createElement("strong");
+      strong.className = "exp-row-label";
+      strong.textContent = block.label || "";
+      var span = document.createElement("span");
+      span.className = "exp-row-items";
+      span.textContent = (block.items || []).join(" · ");
+      row.appendChild(strong);
+      row.appendChild(span);
+      compact.appendChild(row);
     });
+    grid.appendChild(compact);
   }
 
   /* Projects */

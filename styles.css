@@ -199,6 +199,8 @@ body {
 }
 
 .hero-links {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
@@ -219,12 +221,29 @@ body {
   border-radius: 999px;
   background: var(--surface);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.hero-links a[href^="mailto"] {
+  word-break: break-word;
 }
 
 .hero-links a:hover {
   border-color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent-glow);
   transform: translateY(-1px);
+}
+
+.hero-noscript {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hero-noscript a {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 /* Sections */
@@ -402,50 +421,55 @@ body {
   opacity: 0.85;
 }
 
-/* Expertise grid */
+/* Expertise — compact single panel */
 .expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
-  gap: 1rem;
+  margin: 0;
 }
 
-.exp-col {
+.expertise-compact {
   background: var(--bg-elevated);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.35rem 1.5rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  padding: 1rem 1.25rem;
 }
 
-.exp-col:hover {
-  border-color: var(--line-strong);
-  background: var(--surface);
-}
-
-.exp-col h3 {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 1rem;
-}
-
-.exp-col ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.exp-col li {
-  font-size: 0.9rem;
-  color: var(--text-soft);
-  padding: 0.35rem 0;
+.exp-row {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 10rem) 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.45rem 0;
   border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  align-items: start;
 }
 
-.exp-col li:last-child {
+.exp-row:last-child {
   border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.exp-row:first-child {
+  padding-top: 0;
+}
+
+.exp-row-label {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.exp-row-items {
+  color: var(--text-soft);
+}
+
+@media (max-width: 520px) {
+  .exp-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
 }
 
 /* Projects */
@@ -687,14 +711,6 @@ body {
   max-width: 40ch;
 }
 
-.footer-copy code {
-  font-size: 0.85em;
-  color: var(--text-soft);
-  background: var(--surface);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
-}
-
 @media print {
   .top,
   .bg-grid {
@@ -708,7 +724,7 @@ body {
 
   .exp-card,
   .project-card,
-  .exp-col,
+  .expertise-compact,
   .edu-card {
     break-inside: avoid;
     box-shadow: none;
