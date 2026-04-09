@@ -144,6 +144,25 @@
             block.appendChild(tech);
           }
 
+          var decs = init.decisions;
+          if (decs && decs.length) {
+            var decWrap = document.createElement("div");
+            decWrap.className = "exp-init-decisions";
+            var decTitle = document.createElement("p");
+            decTitle.className = "exp-decisions-title";
+            decTitle.textContent = "What I used and why";
+            decWrap.appendChild(decTitle);
+            var decUl = document.createElement("ul");
+            decUl.className = "exp-decisions-list";
+            decs.forEach(function (line) {
+              var dli = document.createElement("li");
+              dli.textContent = line;
+              decUl.appendChild(dli);
+            });
+            decWrap.appendChild(decUl);
+            block.appendChild(decWrap);
+          }
+
           li.appendChild(block);
         });
       } else {
